@@ -22,14 +22,20 @@ class MainActivity : AppCompatActivity() {
             this.intent.getParcelableExtra("user_data")
         }
 
-        if (userSaveData != null) {
-            tvRegist.text = getResources().getString(R.string.tvUbahData)
-            btnRegist.text = getResources().getString(R.string.btUpd)
-        }
+
 
         btnRegist.setOnClickListener {
-            val intent = Intent(this, Registration_Screen::class.java)
-            startActivity(intent)
+
+            if (userSaveData != null) {
+            tvRegist.text = getResources().getString(R.string.tvUbahData)
+            btnRegist.text = getResources().getString(R.string.btUpd)
+                val intent = Intent(this, Registration_Screen::class.java)
+                intent.putExtra("user_data", userSaveData)
+                startActivity(intent)
+            }else{
+                val intent = Intent(this, Registration_Screen::class.java)
+                startActivity(intent)
+            }
         }
 
 
