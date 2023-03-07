@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginScreen"
     android:gravity="center"
+    android:orientation="vertical"
     android:paddingHorizontal="40dp">
 
 
@@ -21,8 +22,8 @@
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/etHeight"
+        android:layout_marginTop="@dimen/etMargin"
         android:background="@drawable/input_text_box"
         android:hint="@string/loginUsername"
         android:inputType="text"
@@ -31,20 +32,22 @@
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="@dimen/etHeight"
+        android:layout_marginTop="@dimen/etMargin"
         android:background="@drawable/input_text_box"
         android:hint="@string/loginPassword"
         android:inputType="textPassword"
         android:paddingHorizontal="15dp" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:paddingHorizontal="50dp"
+        android:paddingHorizontal="@dimen/btPadding"
         android:text="@string/loginTv"
+        android:textColor="@color/white"
+        android:background="@drawable/login_button"
         android:textSize="35sp" />
 
     <TextView

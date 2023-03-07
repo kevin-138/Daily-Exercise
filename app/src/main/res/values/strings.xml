@@ -4,4 +4,15 @@
     <string name="loginUsername">Username</string>
     <string name="loginTv">LOGIN</string>
 
+    <string name="val_log1">Login Gagal, Username dan Password tidak boleh kosong</string>
+    <string name="val_log2">Login Gagal, Panjang username tidak valid (6-15 karakter)</string>
+    <string name="val_log3">Login Gagal, username dan passsword tidak boleh mengandung spasi</string>
+    <string name="val_log4">Login Gagal, username harus kombinasi angka dan huruf</string>
+    <string name="val_log4.1">Login Gagal, username tidak boleh mengandung simbol</string>
+    <string name="val_log5">Login Gagal, Panjang password tidak valid (8-20 karakter)</string>
+    <string name="val_log6">Login Gagal, password harus kombinasi angka, huruf, dan simbol</string>
+    <string name="val_log7">Login Gagal, password atau username yang anda masukkan salah</string>
+    <string name="log_success">Login berhasil.
+Selamat datang, %s</string>
+
 </resources>
