@@ -55,8 +55,6 @@ class LoginScreen : AppCompatActivity() {
             else -> {
                 val validasiAkun = dataAkun[userInput] == passInput
                 if (validasiAkun) {
-                    tvLoginOut.setTextColor(Color.GREEN)
-                    errorOutput(R.string.log_success)
                     val intent = Intent(this, LoginSuccessScreen::class.java)
                     intent.putExtra("USER_NAME", userInput)
                     startActivity(intent)
