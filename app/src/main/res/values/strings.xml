@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DailyExercise</string>
+    <string name="loginPassword">Password</string>
+    <string name="loginUsername">Username</string>
+    <string name="loginTv">LOGIN</string>
+
 </resources>
