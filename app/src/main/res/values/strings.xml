@@ -1,3 +1,36 @@
 <resources>
-    <string name="app_name">DailyExercise</string>
+    <string name="app_name">Registrasi</string>
+    <string name="btReg">Register</string>
+    <string name="btUpd">Ubah Data</string>
+    <string name="tvLanding">Anda belum terdaftar, Silahkan melakukan registrasi terlebih dahulu</string>
+    <string name="tvUbahData">Anda Sudah Terdaftar,\nData anda............</string>
+    <string name="register_title">REGISTER</string>
+    <string name="radioMale">Male</string>
+    <string name="radioFemale">Female</string>
+    <string name="logintv">LOGIN</string>
+    <string name="lgoginUsername">Username</string>
+    <string name="loginPassword">Password</string>
+    <string name="dateButton">Pilih Tanggal Lahir</string>
+    <string name="datePlaceholder">00 - 00 - 00</string>
+    <string name="val_reg1">Registrasi Gagal, nama tidak boleh kosong</string>
+    <string name="val_reg2">Registrasi Gagal, nama tidak boleh mengandung angka</string>
+    <string name="val_reg3">Registrasi Gagal, nama tidak boleh mengandung symbol</string>
+    <string name="val_reg4">Registrasi Gagal, email tidak boleh kosong</string>
+    <string name="val_reg5">Registrasi Gagal, format email salah</string>
+    <string name="val_reg6">Registrasi Gagal, Mohon pilih jenis kelamin anda</string>
+    <string name="val_reg7">Registrasi Gagal, Mohon pilih tanggal lahir anda</string>
+    <string name="val_reg8">Registrasi Gagal, tanggal lahir anda tidak valid</string>
+    <string name="val_reg9">Registrasi Gagal, alamat tidak boleh kosong</string>
+    <string name="reg_success">Login Berhasil</string>
+    <string-array name="pendidikan">
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SMA</item>
+        <item>SMK</item>
+        <item>D3</item>
+        <item>D4</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
 </resources>
