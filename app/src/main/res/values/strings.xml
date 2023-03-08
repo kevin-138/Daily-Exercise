@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">DailyExercise</string>
+    <string name="screen1_title">Listing Alamat</string>
+    <string name="screen2_title">Input Alamat</string>
+    <string name="almtBtn">+Tambah Alamat</string>
+    <string name="dataPenerima">%s - %s</string>
+    <string name="input_val1">Input Alamat Gagal, Alamat Tidak Boleh Blank!</string>
+    <string name="input_val2">Input Alamat Gagal, Detail Alamat Tidak Boleh Blank!</string>
+    <string name="input_val3">Input Alamat Gagal, Label Tidak Boleh Blank!</string>
+    <string name="input_val4">Input Alamat Gagal, Nama Tidak Boleh Blank!</string>
+    <string name="input_val5">Input Alamat Gagal, Nomor Handphone Tidak Boleh Blank!</string>
+    <string name="input_val6">Input Alamat Gagal, Nama tidak boleh mengandung simbol!</string>
+    <string name="input_val7">Input Alamat Gagal, Nomor Handphone hanya boleh mengandung angka!</string>
+    <string name="input_val8">Input Alamat Gagal, Panjang Nomor Handphone 12 - 13 angka</string>
+    <string name="input_val9">Input Alamat Gagal, Nama tidak boleh mengandung angka!</string>
 </resources>
