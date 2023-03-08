@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.*
 import java.util.*
@@ -22,9 +23,14 @@ class Registration_Screen : AppCompatActivity() {
     private lateinit var dateTv: TextView
     lateinit var accDATA: AccountInfo
     lateinit var pendidikan: Spinner
+    lateinit var datePicker: DatePickerDialog
     var pickedDay = 0
     var pickedMonth = 0
     var pickedYear = 0
+    val c = Calendar.getInstance()
+    val day = c.get(Calendar.DAY_OF_MONTH)
+    val month = c.get(Calendar.MONTH)
+    val year = c.get(Calendar.YEAR)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,28 +47,9 @@ class Registration_Screen : AppCompatActivity() {
         dateTv = findViewById(R.id.tvDate)
         pendidikan = findViewById(R.id.spPendidikan)
 
-        val c = Calendar.getInstance()
-        val day = c.get(Calendar.DAY_OF_MONTH)
-        val month = c.get(Calendar.MONTH)
-        val year = c.get(Calendar.YEAR)
-        var datePicker = DatePickerDialog(
-            this,
-            { _, year, monthOfYear, dayOfMonth ->
+        datePicker = initDate()
 
-                pickedDay = dayOfMonth
-                pickedMonth = monthOfYear
-                pickedYear = year
-
-                val dateFinal = "$dayOfMonth - $monthOfYear - $year"
-                dateTv.text = dateFinal
-
-            },
-            year,
-            month,
-            day
-        )
-
-        val stringArray: ArrayList<String> =  resources.getStringArray(R.array.pendidikan).toList() as ArrayList<String>
+        initDate()
 
         val userSavedData = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             this.intent.getParcelableExtra("user_data",AccountInfo::class.java)
@@ -70,19 +57,7 @@ class Registration_Screen : AppCompatActivity() {
             this.intent.getParcelableExtra("user_data")
         }
 
-        if (userSavedData != null) {
-            nama.setText(userSavedData.accountName)
-            email.setText(userSavedData.accountEmail)
-            alamat.setText(userSavedData.accountAlamat)
-            if (userSavedData.accountGender == R.id.rbmale){
-                genderRg.check(R.id.rbmale)
-            } else {
-                genderRg.check(R.id.rbfemale)
-            }
-            datePicker.updateDate(userSavedData.accountYear, userSavedData.accountMonth, userSavedData.accountDay);
-            dateTv.setText("${userSavedData.accountDay} - ${userSavedData.accountMonth} - ${userSavedData.accountYear}")
-            pendidikan.setSelection(stringArray.indexOf(userSavedData.accountStudy))
-        }
+        initUserData(userSavedData)
 
         dateBt.setOnClickListener {
             datePicker.show()
@@ -125,9 +100,55 @@ class Registration_Screen : AppCompatActivity() {
                 accDATA = AccountInfo(nama.text.toString(),email.text.toString(),gender,pickedDay,pickedMonth,pickedYear,alamat.text.toString(),pickedPendidikan)
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("user_data", accDATA)
-                startActivity(intent)
+                setResult(RESULT_OK, intent)
                 finish()
             }
+        }
+    }
+
+    fun initDate():DatePickerDialog {
+        val datePick = DatePickerDialog(
+            this,
+            { _, year, monthOfYear, dayOfMonth ->
+
+                pickedDay = dayOfMonth
+                pickedMonth = monthOfYear
+                pickedYear = year
+
+                val dateFinal = "$dayOfMonth - ${monthOfYear+1} - $year"
+                dateTv.text = dateFinal
+            },
+            year,
+            month,
+            day
+        )
+        return datePick
+    }
+
+    fun initUserData(account: AccountInfo?){
+        val stringArray: ArrayList<String> =  resources.getStringArray(R.array.pendidikan).toList() as ArrayList<String>
+        if (account != null) {
+            nama.setText(account.accountName)
+            email.setText(account.accountEmail)
+            alamat.setText(account.accountAlamat)
+            if (account.accountGender == R.id.rbmale){
+                genderRg.check(R.id.rbmale)
+            } else {
+                genderRg.check(R.id.rbfemale)
+            }
+            Log.d("user", account.toString())
+            datePicker.updateDate(account.accountYear, account.accountMonth, account.accountDay)
+            pickedDay = account.accountDay
+            pickedMonth = account.accountMonth+1
+            pickedYear = account.accountYear
+            dateTv.text = (getResources().getString(
+                R.string.date,
+                account.accountDay,
+                account.accountMonth + 1,
+                account.accountYear
+            ))
+//            dateTv.text = ("${account.accountDay} - ${account.accountMonth+1} - ${account.accountYear}")
+            pendidikan.setSelection(stringArray.indexOf(account.accountStudy))
         }
     }
 

@@ -22,6 +22,12 @@
     <string name="val_reg8">Registrasi Gagal, tanggal lahir anda tidak valid</string>
     <string name="val_reg9">Registrasi Gagal, alamat tidak boleh kosong</string>
     <string name="reg_success">Login Berhasil</string>
+    <string name="etEm">E-mail</string>
+    <string name="etNama">Nama Lengkap</string>
+    <string name="alamat">Alamat</string>
+    <string name="pendidikan">Pendidikan Terakhir:</string>
+    <string name="acc">Create Account</string>
+    <string name="date">%d - %d - %d</string>
     <string-array name="pendidikan">
         <item>SD</item>
         <item>SMP</item>

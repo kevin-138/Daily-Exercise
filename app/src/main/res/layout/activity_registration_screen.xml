@@ -22,7 +22,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/textbox"
-        android:hint="Nama Lengkap"
+        android:hint="@string/etNama"
         android:inputType="text"
         android:paddingHorizontal="15dp" />
 
@@ -32,7 +32,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/textbox"
-        android:hint="E-mail"
+        android:hint="@string/etEm"
         android:inputType="textEmailAddress"
         android:paddingHorizontal="15dp"
         tools:autofillHints="" />
@@ -72,7 +72,7 @@
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:layout_marginTop="5dp"
         android:text="@string/datePlaceholder"
         android:textColor="@color/black"
@@ -85,7 +85,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/textbox"
-        android:hint="Alamat"
+        android:hint="@string/alamat"
         android:inputType="text"
         android:paddingHorizontal="15dp" />
 
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginTop="15dp"
-        android:text="Pendidikan Terakhir:"
+        android:text="@string/pendidikan"
         android:textColor="@color/black"
         android:textSize="18sp" />
 
@@ -118,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Create Account"
+        android:text="@string/acc"
         android:textSize="25sp" />
 
     <TextView
