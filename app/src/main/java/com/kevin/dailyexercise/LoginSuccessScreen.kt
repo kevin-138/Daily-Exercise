@@ -11,8 +11,6 @@ class LoginSuccessScreen : AppCompatActivity() {
         setContentView(R.layout.activity_login_success_screen)
         tvSucess = findViewById(R.id.tvLoginSuccess)
         val userName:String? = intent.getStringExtra("USER_NAME")
-
-        tvSucess.text = """Login berhasil.
-Selamat datang, ${userName}"""
+        tvSucess.text = resources.getString(R.string.log_success,userName)
     }
 }

@@ -12,7 +12,6 @@
     <string name="val_log5">Login Gagal, Panjang password tidak valid (8-20 karakter)</string>
     <string name="val_log6">Login Gagal, password harus kombinasi angka, huruf, dan simbol</string>
     <string name="val_log7">Login Gagal, password atau username yang anda masukkan salah</string>
-    <string name="log_success">Login berhasil.
-Selamat datang, %s</string>
+    <string name="log_success">Login berhasil,\nSelamat datang, %s</string>
 
 </resources>

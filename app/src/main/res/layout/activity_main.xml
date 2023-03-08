@@ -27,7 +27,7 @@
         android:background="@drawable/input_text_box"
         android:hint="@string/loginUsername"
         android:inputType="text"
-        android:paddingHorizontal="5dp" />
+        android:paddingHorizontal="5dp"/>
 
     <EditText
         android:id="@+id/etPassword"
