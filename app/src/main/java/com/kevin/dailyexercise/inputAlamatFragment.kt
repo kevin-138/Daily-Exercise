@@ -1,34 +1,30 @@
 package com.kevin.dailyexercise
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import com.google.android.material.textfield.TextInputEditText
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [inputAlamatFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class inputAlamatFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var edTAlamat: TextInputEditText
+    lateinit var edTDetail: TextInputEditText
+    lateinit var edTLabel: TextInputEditText
+    lateinit var edTNama: TextInputEditText
+    lateinit var edTNoHp: TextInputEditText
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    lateinit var teVAlamat: TextView
+    lateinit var teVDetail: TextView
+    lateinit var teVLabel: TextView
+    lateinit var teVNama: TextView
+    lateinit var teVNoHp: TextView
+    lateinit var saveBtn: Button
+    var dataUser:DataAlamatUser? = null
+    var position:Int? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,23 +33,75 @@ class inputAlamatFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_input_alamat, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment inputAlamatFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            inputAlamatFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        edTAlamat = view.findViewById(R.id.etAlamat)
+        edTDetail = view.findViewById(R.id.etDetail)
+        edTLabel = view.findViewById(R.id.etLabel)
+        edTNama = view.findViewById(R.id.etNama)
+        edTNoHp = view.findViewById(R.id.etNoHp)
+
+        teVAlamat = view.findViewById(R.id.tvAlamat)
+        teVDetail = view.findViewById(R.id.tvDetail)
+        teVLabel = view.findViewById(R.id.tvLabelList)
+        teVNama = view.findViewById(R.id.tvNama)
+        teVNoHp = view.findViewById(R.id.tvNoHp)
+
+        saveBtn = view.findViewById(R.id.btnSave)
+        val argument = this.arguments
+        if (argument != null){
+            dataUser = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                argument.getParcelable("userAlamat", DataAlamatUser::class.java)
+            } else {
+                argument.getParcelable("userAlamat")
+            }
+            position = argument.getInt("itemPosition")
+        }
+
+        initData()
+
+        saveBtn.setOnClickListener {
+            validateInput()
+        }
+    }
+
+    fun validateInput() {
+            when{
+                edTAlamat.text!!.isBlank() -> edTAlamat.setError(getString(R.string.input_val1))
+                edTDetail.text!!.isBlank() -> edTDetail.setError(getString(R.string.input_val2))
+                edTLabel.text!!.isBlank() -> edTLabel.setError(getString(R.string.input_val3))
+                edTNama.text!!.isBlank() -> edTNama.setError(getString(R.string.input_val4))
+                edTNoHp.text!!.isBlank() -> edTNoHp.setError(getString(R.string.input_val5))
+                else -> {
+                    var accData = DataAlamatUser(
+                        edTAlamat.text.toString(),
+                        edTDetail.text.toString(),
+                        edTLabel.text.toString(),
+                        edTNama.text.toString(),
+                        edTNoHp.text.toString(),
+                    )
+                    val inputFragment = AlamatFragment()
+                    val bundle = Bundle()
+                    val inputFragmentManager = parentFragmentManager
+                    bundle.putParcelable("UserAlamat",accData)
+                    bundle.putInt("ItemPosition",position!!)
+                    inputFragment.arguments = bundle
+                    inputFragmentManager.beginTransaction().apply {
+                        replace(R.id.RelativeLayoutContainer, inputFragment, AlamatFragment::class.java.simpleName)
+                        commit()
+                    }
+//                    getFragmentManager()?.beginTransaction()?.remove(this)?.commitAllowingStateLoss();
                 }
             }
+    }
+
+    fun initData(){
+        if (dataUser != null){
+            edTAlamat.setText(dataUser?.dataAlamat)
+            edTDetail.setText(dataUser?.dataDetail)
+            edTLabel.setText(dataUser?.dataLabel)
+            edTNama.setText(dataUser?.dataPenerima)
+            edTNoHp.setText(dataUser?.dataHandphone)
+        }
     }
 }

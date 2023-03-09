@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:id="@+id/RelativeLayoutContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AlamatFragment"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:padding="@dimen/dimen_1">
-    >
+    android:background="@color/gray2"
+    android:paddingVertical="@dimen/dimen_1">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listAlamatPengguna"
@@ -17,4 +16,4 @@
         android:layout_marginTop="@dimen/dimen_1"/>
 
 
-</LinearLayout>
+</RelativeLayout>

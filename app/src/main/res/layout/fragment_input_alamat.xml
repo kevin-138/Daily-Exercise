@@ -1,14 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".inputAlamatFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-</FrameLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:boxBackgroundColor="@color/gray2"
+                app:boxStrokeColor="@color/gray"
+                app:hintTextColor="@color/gray"
+                android:hint="@string/hint1"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/etHeight"
+                    android:paddingVertical="@dimen/dimen_1" />
+
+                <TextView
+                    android:id="@+id/tvAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_3"
+                    android:text="@string/tvInput1"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                app:boxBackgroundColor="@color/gray2"
+                app:boxStrokeColor="@color/gray"
+                app:hintTextColor="@color/gray"
+                android:hint="@string/hint2"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/etHeight"
+                    android:paddingVertical="@dimen/dimen_1" />
+                <TextView
+                    android:id="@+id/tvDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_3"
+                    android:text="@string/tvInput2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                app:boxBackgroundColor="@color/gray2"
+                app:boxStrokeColor="@color/gray"
+                app:hintTextColor="@color/gray"
+                android:hint="@string/hint3"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/etHeight"
+                    android:paddingVertical="@dimen/dimen_1" />
+                <TextView
+                    android:id="@+id/tvLabelList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_3"
+                    android:text="@string/tvInput3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                app:boxBackgroundColor="@color/gray2"
+                app:boxStrokeColor="@color/gray"
+                app:hintTextColor="@color/gray"
+                android:hint="@string/hint4"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/etHeight"
+                    android:paddingVertical="@dimen/dimen_1" />
+                <TextView
+                    android:id="@+id/tvNama"
+                    android:text="@string/tvInput4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                app:boxBackgroundColor="@color/gray2"
+                app:boxStrokeColor="@color/gray"
+                app:hintTextColor="@color/gray"
+                android:hint="@string/hint5"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNoHp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/etHeight"
+                    android:drawableEnd="@drawable/baseline_perm_contact_calendar_24"
+                    android:inputType="number"
+                    android:paddingVertical="@dimen/dimen_1" />
+
+                <TextView
+                    android:id="@+id/tvNoHp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:text="@string/btnSimpan"
+                android:backgroundTint="@color/blue3"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+

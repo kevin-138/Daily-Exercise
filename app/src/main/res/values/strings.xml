@@ -30,4 +30,14 @@
     <string name="input_val7">Input Alamat Gagal, Nomor Handphone hanya boleh mengandung angka!</string>
     <string name="input_val8">Input Alamat Gagal, Panjang Nomor Handphone 12 - 13 angka</string>
     <string name="input_val9">Input Alamat Gagal, Nama tidak boleh mengandung angka!</string>
+    <string name="tvInput1">Alamat Lengkap Tujuan</string>
+    <string name="tvInput2">Tulis nama jalan/kantor/no. lantai/no. rumah</string>
+    <string name="tvInput3">Tulis Rumah, Kos, Kantor, dll</string>
+    <string name="tvInput4">Nama lengkap Penerima</string>
+    <string name="hint1">Alamat Lengkap</string>
+    <string name="hint2">Detail Alamat</string>
+    <string name="hint3">Label</string>
+    <string name="hint4">Nama Penerima</string>
+    <string name="hint5">No. Handphone</string>
+    <string name="btnSimpan">Simpan</string>
 </resources>

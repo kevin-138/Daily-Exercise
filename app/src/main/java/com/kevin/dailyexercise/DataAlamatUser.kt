@@ -9,6 +9,5 @@ data class DataAlamatUser(
     var dataDetail:String,
     var dataLabel:String,
     var dataPenerima:String,
-    var dataHandphone:String,
-    var dataSwitch:Boolean
+    var dataHandphone:String
 ) : Parcelable
