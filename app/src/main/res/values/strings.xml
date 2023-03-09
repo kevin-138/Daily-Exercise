@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">DailyExercise</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="loginPassword">Password</string>
+    <string name="loginUsername">Username</string>
+    <string name="loginTv">LOGIN</string>
+
+    <string name="val_log1">Login Gagal, Username dan Password tidak boleh kosong</string>
+    <string name="val_log2">Login Gagal, Panjang username tidak valid (6-15 karakter)</string>
+    <string name="val_log3">Login Gagal, username dan passsword tidak boleh mengandung spasi</string>
+    <string name="val_log4">Login Gagal, username harus kombinasi angka dan huruf</string>
+    <string name="val_log4.1">Login Gagal, username tidak boleh mengandung simbol</string>
+    <string name="val_log5">Login Gagal, Panjang password tidak valid (8-20 karakter)</string>
+    <string name="val_log6">Login Gagal, password harus kombinasi angka, huruf, dan simbol</string>
+    <string name="val_log7">Login Gagal, password atau username yang anda masukkan salah</string>
+    <string name="log_success">Login berhasil</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="screen1_title">Listing Alamat</string>
+    <string name="screen2_title">Input Alamat</string>
+    <string name="almtBtn">+Tambah Alamat</string>
+    <string name="dataPenerima">%s - %s</string>
+    <string name="input_val1">Input Alamat Gagal, Alamat Tidak Boleh Blank!</string>
+    <string name="input_val2">Input Alamat Gagal, Detail Alamat Tidak Boleh Blank!</string>
+    <string name="input_val3">Input Alamat Gagal, Label Tidak Boleh Blank!</string>
+    <string name="input_val4">Input Alamat Gagal, Nama Tidak Boleh Blank!</string>
+    <string name="input_val5">Input Alamat Gagal, Nomor Handphone Tidak Boleh Blank!</string>
+    <string name="input_val6">Input Alamat Gagal, Nama tidak boleh mengandung simbol!</string>
+    <string name="input_val7">Input Alamat Gagal, Nomor Handphone hanya boleh mengandung angka!</string>
+    <string name="input_val8">Input Alamat Gagal, Panjang Nomor Handphone 12 - 13 angka</string>
+    <string name="input_val9">Input Alamat Gagal, Nama tidak boleh mengandung angka!</string>
 </resources>

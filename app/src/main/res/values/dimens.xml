@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="etMargin">15dp</dimen>
+    <dimen name="etHeight">48dp</dimen>
+    <dimen name="btPadding">58dp</dimen>
+    <dimen name="dimen_1">15dp</dimen>
+    <dimen name="dimen_2">5dp</dimen>
+    <dimen name="dimen_3">20dp</dimen>
+    <dimen name="dimen_4">30dp</dimen>
+    <dimen name="elevation">8dp</dimen>
+    <dimen name="etHeight2">58dp</dimen>
+</resources>
