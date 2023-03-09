@@ -33,7 +33,7 @@
             android:textColor="@color/black"
             android:textColorHint="@color/gray">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAlamat"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/etHeight"/>
@@ -58,7 +58,7 @@
             android:textColor="@color/black"
             android:textColorHint="@color/gray">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDetail"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/etHeight" />
@@ -82,12 +82,12 @@
             android:textColor="@color/black"
             android:textColorHint="@color/gray">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etLabel"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/etHeight" />
             <TextView
-                android:id="@+id/tvLabel"
+                android:id="@+id/tvLabelList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/dimen_3"
@@ -106,7 +106,7 @@
             android:textColor="@color/black"
             android:textColorHint="@color/gray">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNama"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/etHeight" />
@@ -129,7 +129,7 @@
             android:textColor="@color/black"
             android:textColorHint="@color/gray">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNoHp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/etHeight"
@@ -159,7 +159,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_4"
             android:background="@color/blue"
-            android:text="Simpan" />
+            android:text="Simpan"
+            android:textColor="#212121" />
     </LinearLayout>
 
 
