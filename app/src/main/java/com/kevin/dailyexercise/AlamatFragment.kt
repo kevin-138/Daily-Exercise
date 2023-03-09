@@ -52,7 +52,8 @@ class AlamatFragment : Fragment(),DataAlamatAdapter.interfaceView {
 
     override fun deleteItemRecyclerListner(position: Int) {
         dataAlamatList.removeAt(position)
-        dataAdapter.notifyDataSetChanged()
+        dataAdapter.notifyItemRemoved(position)
+        dataAdapter.notifyItemRangeChanged(position, dataAdapter.itemCount)
     }
 
     fun initData(){
