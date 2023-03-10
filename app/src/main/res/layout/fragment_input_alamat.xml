@@ -30,7 +30,8 @@
                     android:id="@+id/etAlamat"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/etHeight"
-                    android:paddingVertical="@dimen/dimen_1" />
+                    android:paddingVertical="@dimen/dimen_1"
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
                     android:id="@+id/tvAlamat"
@@ -135,7 +136,8 @@
                     android:layout_height="@dimen/etHeight"
                     android:drawableEnd="@drawable/baseline_perm_contact_calendar_24"
                     android:inputType="number"
-                    android:paddingVertical="@dimen/dimen_1" />
+                    android:paddingVertical="@dimen/dimen_1"
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
                     android:id="@+id/tvNoHp"
@@ -149,9 +151,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
-                android:text="@string/btnSimpan"
                 android:backgroundTint="@color/blue3"
-                />
+                android:text="@string/btnSimpan"
+                android:textColor="#000000" />
         </LinearLayout>
 
     </ScrollView>

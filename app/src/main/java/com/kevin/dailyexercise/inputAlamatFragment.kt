@@ -73,7 +73,7 @@ class inputAlamatFragment : Fragment() {
                 edTNama.text!!.isBlank() -> edTNama.setError(getString(R.string.input_val4))
                 edTNoHp.text!!.isBlank() -> edTNoHp.setError(getString(R.string.input_val5))
                 else -> {
-                    var accData = DataAlamatUser(
+                    val accData = DataAlamatUser(
                         edTAlamat.text.toString(),
                         edTDetail.text.toString(),
                         edTLabel.text.toString(),

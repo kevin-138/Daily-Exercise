@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Switch
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -32,10 +31,8 @@ class DataAlamatAdapter(private val dataList: MutableList<DataAlamatUser>):Recyc
     }
 
     override fun onBindViewHolder(holder: DataAlamatHolder, position: Int) {
-//        var stringPenerima = getContext().getResources().getString(R.string.dataPenerima, dataList[position].dataPenerima, dataList[position].dataHandphone)
-
         holder.tvLabel.text = dataList[position].dataLabel
-        holder.tvUserInfo.text = "${dataList[position].dataPenerima} - ${dataList[position].dataHandphone}"
+        "${dataList[position].dataPenerima} - ${dataList[position].dataHandphone}".also { holder.tvUserInfo.text = it }
         holder.tvAddrDetail.text = dataList[position].dataDetail
         holder.tvAddr.text = dataList[position].dataAlamat
 
