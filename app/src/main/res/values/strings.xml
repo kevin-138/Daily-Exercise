@@ -41,4 +41,14 @@
     <string name="hint4">Nama Penerima</string>
     <string name="hint5">No. Handphone</string>
     <string name="btnSimpan">Simpan</string>
+    <string name="confirm">Confirm data alamat deletion?</string>
+    <string name="dltwrn">Warning!</string>
+    <string name="pb1">Delete</string>
+    <string name="nb1">No</string>
+    <string name="hapus">Hapus</string>
+    <string name="ubah">Ubah</string>
+    <string name="user_adress">User Adress</string>
+    <string name="adress_label">Adress Label</string>
+    <string name="user_infromation">User Infromation</string>
+    <string name="label">Label</string>
 </resources>

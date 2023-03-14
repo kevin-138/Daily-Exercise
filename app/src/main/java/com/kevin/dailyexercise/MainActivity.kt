@@ -1,17 +1,28 @@
 package com.kevin.dailyexercise
 
 import android.os.Bundle
-import android.text.TextUtils.replace
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.kevin.dailyexercise.databinding.ActivityMainBinding
+import com.kevin.dailyexercise.fragment.AlamatFragment
+import com.kevin.dailyexercise.fragment.LoginFragment
+import com.kevin.dailyexercise.fragment.inputAlamatFragment
 
 class MainActivity : AppCompatActivity() {
-    lateinit var tabLayout: TabLayout
+
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        tabLayout = findViewById(R.id.tlMain)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setupTab()
+
+        setupFragment(0)
+    }
+
+    private fun setupTab(){
+        val tabLayout = binding.tlMain
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when {
@@ -33,8 +44,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-
-        setupFragment(0)
     }
 
     fun setupFragment(fragSelected: Int) {
@@ -43,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 val lgnFragment = LoginFragment()
                 val lgnFragmentManager = supportFragmentManager
                 lgnFragmentManager.beginTransaction().apply {
-                    replace(R.id.frameLayoutMain, lgnFragment, LoginFragment::class.java.simpleName)
+                    replace(binding.frameLayoutMain.id, lgnFragment, LoginFragment::class.java.simpleName)
                     commit()
                 }
             }
@@ -51,15 +60,10 @@ class MainActivity : AppCompatActivity() {
                 val alamatFragment = AlamatFragment()
                 val alamatFragmenttManager = supportFragmentManager
                 alamatFragmenttManager.beginTransaction().apply {
-                    replace(
-                        R.id.frameLayoutMain,
-                        alamatFragment,
-                        LoginFragment::class.java.simpleName
-                    )
+                    replace(binding.frameLayoutMain.id, alamatFragment, LoginFragment::class.java.simpleName)
                     commit()
                 }
             }
-
         }
     }
 }

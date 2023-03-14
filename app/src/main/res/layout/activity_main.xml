@@ -16,18 +16,16 @@
         app:tabRippleColor="@color/teal_200"
         >
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/ti1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Form Login"
-            android:padding="10dp"/>
+            android:padding="@dimen/pad1"/>
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/ti2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="List Alamat"
-            android:padding="10dp"/>
+            android:padding="@dimen/pad1"/>
     </com.google.android.material.tabs.TabLayout>
 
 

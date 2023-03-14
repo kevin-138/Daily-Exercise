@@ -1,48 +1,41 @@
-package com.kevin.dailyexercise
+package com.kevin.dailyexercise.fragment
 
-import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-
-private val dataAkun = mapOf(
-    "global1234" to "glob123!!",
-    "loyalty5678" to "l0y@lTyS67B",
-    "indonesia1945" to "inD0n35!a19AS",
-    "alfagift2023" to "alF@g1fTz0zE"
-)
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
+import com.kevin.dailyexercise.R
+import com.kevin.dailyexercise.data.DataAkun
+import com.kevin.dailyexercise.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
-    lateinit var etusername: EditText
-    lateinit var etpassword: EditText
-    lateinit var loginBt: Button
-    lateinit var tvLoginOut: TextView
+    lateinit var binding: FragmentLoginBinding
+    var toast: Toast? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+    ): View {
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        etusername = view.findViewById(R.id.etUsername)
-        etpassword = view.findViewById(R.id.etPassword)
-        loginBt = view.findViewById(R.id.btLogin)
-        tvLoginOut = view.findViewById(R.id.tvLoginOutput)
 
-        loginBt.setOnClickListener {
-            validateLogin((etusername.text.toString()), (etpassword.text.toString()))
+        binding.btLogin.setOnClickListener {
+            validateLogin(
+                (binding.etUsername.text.toString()),
+                (binding.etPassword.text.toString())
+            )
         }
+
     }
 
     fun validateLogin(userInput: String, passInput: String) {
-        val number = Regex("[0-9]")
+        val number = Regex("\\d")
         val alphabet = Regex("[a-zA-Z]")
         val symbols = Regex("[\\p{P}\\p{S}]")
 
@@ -57,13 +50,11 @@ class LoginFragment : Fragment() {
             passInput.length !in 8..20 -> errorOutput(R.string.val_log5)
             !symbols.containsMatchIn(passInput) || !number.containsMatchIn(passInput) || !alphabet.containsMatchIn(
                 passInput
-            ) ->
-                errorOutput(R.string.val_log6)
+            ) -> errorOutput(R.string.val_log6)
             else -> {
-                val validasiAkun = dataAkun[userInput] == passInput
+                val validasiAkun = DataAkun.credentials[userInput] == passInput
                 if (validasiAkun) {
-                    tvLoginOut.setTextColor(Color.GREEN)
-                    tvLoginOut.text = getString(R.string.log_success)
+                    sucessOutput(R.string.log_success)
                 } else {
                     errorOutput(R.string.val_log7)
                 }
@@ -72,7 +63,17 @@ class LoginFragment : Fragment() {
     }
 
     fun errorOutput(errorId: Int) {
-        tvLoginOut.setTextColor(Color.RED)
-        tvLoginOut.text = getString(errorId)
+            toast = Toast.makeText(context, getString(errorId), Toast.LENGTH_SHORT)
+            toast?.show()
+    }
+
+    fun sucessOutput(textId: Int) {
+        activity?.let {
+            Snackbar.make(
+                binding.clSnack,
+                getString(textId),
+                Snackbar.LENGTH_INDEFINITE
+            ).show()
+        }
     }
 }

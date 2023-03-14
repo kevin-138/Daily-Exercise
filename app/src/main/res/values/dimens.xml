@@ -9,4 +9,7 @@
     <dimen name="dimen_4">30dp</dimen>
     <dimen name="elevation">8dp</dimen>
     <dimen name="etHeight2">58dp</dimen>
+    <dimen name="pad1">10dp</dimen>
+    <dimen name="v_height">48dp</dimen>
+    <dimen name="v_width">2dp</dimen>
 </resources>

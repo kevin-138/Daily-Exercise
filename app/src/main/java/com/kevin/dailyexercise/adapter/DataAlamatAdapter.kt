@@ -1,29 +1,30 @@
-package com.kevin.dailyexercise
+package com.kevin.dailyexercise.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kevin.dailyexercise.data_model.DataAlamatUser
+import com.kevin.dailyexercise.databinding.AlamatListDesignBinding
 
 class DataAlamatAdapter(private val dataList: MutableList<DataAlamatUser>):RecyclerView.Adapter<DataAlamatAdapter.DataAlamatHolder>() {
-    var itemListener :interfaceView? = null
-    interface interfaceView {
+    var itemListener : InterfaceView? = null
+    interface InterfaceView {
         fun ubahItemRecyclerListner(position:Int)
         fun deleteItemRecyclerListner(position:Int)
     }
-    class DataAlamatHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val tvLabel = itemView.findViewById<TextView>(R.id.tvLabel)
-        val tvUserInfo = itemView.findViewById<TextView>(R.id.tvUserInfo)
-        val tvAddrDetail = itemView.findViewById<TextView>(R.id.tvAddrLabel)
-        val tvAddr = itemView.findViewById<TextView>(R.id.tvUserAddr)
-        val btUbah = itemView.findViewById<Button>(R.id.btnUbah)
-        val btDelete = itemView.findViewById<Button>(R.id.btnHapus)
+    class DataAlamatHolder(binding: AlamatListDesignBinding): RecyclerView.ViewHolder(binding.root) {
+        val tvLabel = binding.tvLabel
+        val tvUserInfo = binding.tvUserInfo
+        val tvAddrDetail = binding.tvAddrLabel
+        val tvAddr = binding.tvUserAddr
+        val btUbah = binding.btnUbah
+        val btDelete = binding.btnHapus
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataAlamatHolder {
-        return  DataAlamatHolder(LayoutInflater.from(parent.context).inflate(R.layout.alamat_list_design, parent,false))
+        val binding: AlamatListDesignBinding =
+            AlamatListDesignBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return DataAlamatHolder(binding)
     }
 
     override fun getItemCount(): Int {

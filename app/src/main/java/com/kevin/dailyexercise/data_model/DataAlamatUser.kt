@@ -1,4 +1,4 @@
-package com.kevin.dailyexercise
+package com.kevin.dailyexercise.data_model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
